@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Maria Castillo | Career Portfolio</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f0f0f0; color: #333; margin: 0; padding: 0; }
+    .protected { display: none; max-width: 900px; margin: 2rem auto; padding: 2rem; background: white; border-radius: 8px; }
+    .login { max-width: 400px; margin: 100px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center; }
+    input[type="password"] { padding: 10px; width: 80%; margin-bottom: 10px; font-size: 1rem; }
+    button { padding: 10px 20px; font-size: 1rem; cursor: pointer; }
+    p#error { color: red; }
+  </style>
+</head>
+<body>
+  <div class="login">
+    <h2>Enter Access Code</h2>
+    <input type="password" id="password" placeholder="Access code" />
+    <button onclick="checkPassword()">Submit</button>
+    <p id="error"></p>
+  </div>
+
+  <div class="protected" id="content">
+    <h1>Maria I. Castillo, Ed.D.</h1>
+    <p>Language Education Specialist, Curriculum Developer & Online Teaching Practitioner | Experienced in Higher Ed, Educator Training & Global Instruction</p>
+
+    <h2>About Me</h2>
+    <p>With over 15 years of international and domestic experience in higher education, adult learning, curriculum design, and technology-enhanced instruction, I am now expanding into roles that value cross-cultural communication, educational innovation, and program development in digital learning environments.</p>
+
+    <h2>What I Offer</h2>
+    <ul>
+      <li>Curriculum design for language education and adult learning</li>
+      <li>Experience with online instruction and digital integration for language education</li>
+      <li>Program coordination and educator support in higher education and adult learning contexts</li>
+      <li>Cross-cultural instruction and global education delivery</li>
+    </ul>
+
+    <h2>Key Projects & Impact</h2>
+    <ul>
+      <li>Facilitated cross-national curriculum training in the U.S., Mexico, China, and Slovenia</li>
+      <li>Co-authored an NSF grant for cyberlearning in language education</li>
+      <li>Managed curriculum delivery and instructor coaching in adult language education programs</li>
+    </ul>
+
+    <h2>Selected Highlights</h2>
+    <ul>
+      <li>Designed a multi-level adult language program tailored to institutional needs</li>
+      <li>Led training on immersive teaching methods and online platforms</li>
+      <li>Supported recruitment and community engagement to improve enrollment in ESL programs</li>
+    </ul>
+
+    <h2>What's Next?</h2>
+    <p>Exploring opportunities in digital learning, consulting, and global education that align with my instructional background and future goals.</p>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById('password').value;
+      const content = document.getElementById('content');
+      const error = document.getElementById('error');
+      if (input === "castillo2024") {
+        document.querySelector('.login').style.display = 'none';
+        content.style.display = 'block';
+      } else {
+        error.textContent = "Incorrect access code. Please try again.";
+      }
+    }
+  </script>
+</body>
+</html>
