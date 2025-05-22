@@ -5,53 +5,166 @@
   <meta charset="UTF-8">
   <title>Maria Castillo | Career Portfolio</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #f0f0f0; color: #333; margin: 0; padding: 0; }
-    .protected { display: none; max-width: 900px; margin: 2rem auto; padding: 2rem; background: white; border-radius: 8px; }
-    .login { max-width: 400px; margin: 100px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center; }
-    input[type="password"] { padding: 10px; width: 80%; margin-bottom: 10px; font-size: 1rem; }
-    button { padding: 10px 20px; font-size: 1rem; cursor: pointer; }
-    p#error { color: red; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease forwards;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .login {
+      max-width: 400px;
+      margin: 6rem auto;
+      padding: 2rem;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h1 {
+      text-align: center;
+      color: #2a6f77;
+    }
+    h2 {
+      color: #2a6f77;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 0.3rem;
+      margin-top: 2rem;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    li {
+      transition: background 0.3s ease;
+    }
+    li:hover {
+      background-color: #f0f0f0;
+    }
+    input[type="password"] {
+      padding: 10px;
+      width: 80%;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #2a6f77;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    p#error {
+      color: red;
+      font-size: 0.9rem;
+    }
+    .intro {
+      font-size: 1.1rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #444;
+    }
+    section {
+      margin-bottom: 2.5rem;
+    }
+    .top-links {
+      text-align: center;
+      margin-top: -1.5rem;
+      margin-bottom: 2rem;
+    }
+    .top-links a {
+      display: inline-block;
+      margin: 0 10px;
+      text-decoration: none;
+      color: #2a6f77;
+      border: 1px solid #2a6f77;
+      padding: 6px 14px;
+      border-radius: 6px;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    .top-links a:hover {
+      background-color: #2a6f77;
+      color: white;
+    }
   </style>
 </head>
 <body>
-  <div class="login">
+  <div class="login" id="login">
     <h2>Enter Access Code</h2>
     <input type="password" id="password" placeholder="Access code" />
     <button onclick="checkPassword()">Submit</button>
     <p id="error"></p>
   </div>
 
-  <div class="protected" id="content">
+  <div class="container" id="content" style="display:none;">
     <h1>Maria I. Castillo, Ed.D.</h1>
-    <p>Language Education Specialist, Curriculum Developer & Online Teaching Practitioner | Experienced in Higher Ed, Educator Training & Global Instruction</p>
+    <p class="intro">
+      Language Education Specialist, Curriculum Developer & Online Teaching Practitioner<br>
+      Experienced in Higher Ed, Educator Training & Global Instruction
+    </p>
 
-    <h2>About Me</h2>
-    <p>With over 15 years of international and domestic experience in higher education, adult learning, curriculum design, and technology-enhanced instruction, I am now expanding into roles that value cross-cultural communication, educational innovation, and program development in digital learning environments.</p>
+    <div class="top-links">
+      <a href="CV_Maria_Castillo.pdf" download>📄 Download CV</a>
+      <a href="mailto:your-email@example.com">📩 Contact Me</a>
+    </div>
 
-    <h2>What I Offer</h2>
-    <ul>
-      <li>Curriculum design for language education and adult learning</li>
-      <li>Experience with online instruction and digital integration for language education</li>
-      <li>Program coordination and educator support in higher education and adult learning contexts</li>
-      <li>Cross-cultural instruction and global education delivery</li>
-    </ul>
+    <section>
+      <h2>About Me</h2>
+      <p>With over 15 years of international and domestic experience in higher education, adult learning, curriculum design, and technology-enhanced instruction, I am now expanding into roles that value cross-cultural communication, educational innovation, and program development in digital learning environments.</p>
+    </section>
 
-    <h2>Key Projects & Impact</h2>
-    <ul>
-      <li>Facilitated cross-national curriculum training in the U.S., Mexico, China, and Slovenia</li>
-      <li>Co-authored an NSF grant for cyberlearning in language education</li>
-      <li>Managed curriculum delivery and instructor coaching in adult language education programs</li>
-    </ul>
+    <section>
+      <h2>What I Offer</h2>
+      <ul>
+        <li>Curriculum design for language education and adult learning</li>
+        <li>Experience with online instruction and digital tools for language education</li>
+        <li>Program coordination and educator support in higher education and adult learning contexts</li>
+        <li>Cross-cultural instruction and global education delivery</li>
+      </ul>
+    </section>
 
-    <h2>Selected Highlights</h2>
-    <ul>
-      <li>Designed a multi-level adult language program tailored to institutional needs</li>
-      <li>Led training on immersive teaching methods and online platforms</li>
-      <li>Supported recruitment and community engagement to improve enrollment in ESL programs</li>
-    </ul>
+    <section>
+      <h2>Key Projects & Impact</h2>
+      <ul>
+        <li>Facilitated cross-national curriculum training in the U.S., Mexico, China, and Slovenia</li>
+        <li>Co-authored an NSF grant for cyberlearning in language education</li>
+        <li>Managed curriculum delivery and educator support in adult language education programs</li>
+      </ul>
+    </section>
 
-    <h2>What's Next?</h2>
-    <p>Exploring opportunities in digital learning, consulting, and global education that align with my instructional background and future goals.</p>
+    <section>
+      <h2>Selected Highlights</h2>
+      <ul>
+        <li>Designed a multi-level adult language program tailored to institutional needs</li>
+        <li>Led training on immersive teaching methods and online platforms</li>
+        <li>Supported recruitment and community engagement to improve enrollment in ESL programs</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>What's Next?</h2>
+      <p>Exploring opportunities in digital learning, consulting, and global education that align with my instructional background and future goals.</p>
+    </section>
   </div>
 
   <script>
@@ -60,7 +173,7 @@
       const content = document.getElementById('content');
       const error = document.getElementById('error');
       if (input === "castillo2024") {
-        document.querySelector('.login').style.display = 'none';
+        document.getElementById('login').style.display = 'none';
         content.style.display = 'block';
       } else {
         error.textContent = "Incorrect access code. Please try again.";
