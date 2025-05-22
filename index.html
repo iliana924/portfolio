@@ -12,21 +12,24 @@
     }
     nav {
       background-color: #2a6f77;
-      padding: 1rem;
+      padding: 0;
       display: flex;
       justify-content: center;
-      gap: 20px;
+      border-bottom: 2px solid #2a6f77;
     }
     nav button {
       background: none;
       border: none;
+      padding: 1rem 1.5rem;
       color: white;
       font-weight: bold;
       cursor: pointer;
       font-size: 1rem;
+      transition: background 0.3s;
     }
-    nav button:hover {
-      text-decoration: underline;
+    nav button:hover,
+    nav button.active {
+      background-color: #1c4c52;
     }
     .container {
       max-width: 900px;
@@ -47,9 +50,12 @@
     }
     section {
       display: none;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
     }
     section.active {
       display: block;
+      opacity: 1;
     }
     ul {
       padding-left: 20px;
@@ -118,8 +124,8 @@
 </div>
 
 <div id="content" style="display:none;">
-  <nav>
-    <button onclick="showTab('about')">About</button>
+  <nav id="tab-nav">
+    <button onclick="showTab('about')" class="active">About</button>
     <button onclick="showTab('offer')">What I Offer</button>
     <button onclick="showTab('projects')">Projects</button>
     <button onclick="showTab('highlights')">Highlights</button>
@@ -190,12 +196,22 @@
 
   function showTab(tabId) {
     const sections = document.querySelectorAll("section");
+    const buttons = document.querySelectorAll("nav button");
+
     sections.forEach(section => {
       section.classList.remove("active");
     });
-    const selected = document.getElementById(tabId);
-    if (selected) {
-      selected.classList.add("active");
+    buttons.forEach(button => {
+      button.classList.remove("active");
+    });
+
+    document.getElementById(tabId).classList.add("active");
+
+    const clickedButton = Array.from(buttons).find(btn =>
+      btn.getAttribute("onclick").includes(tabId)
+    );
+    if (clickedButton) {
+      clickedButton.classList.add("active");
     }
   }
 </script>
