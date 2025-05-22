@@ -10,33 +10,28 @@
       background-color: #f4f4f4;
       color: #333;
       margin: 0;
-      padding: 0;
+    }
+    nav {
+      background-color: #2a6f77;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
     }
     .container {
       max-width: 900px;
-      margin: 4rem auto;
+      margin: 2rem auto;
       padding: 2rem;
-      background: #ffffff;
+      background: #fff;
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1s ease forwards;
-    }
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    .login {
-      max-width: 400px;
-      margin: 6rem auto;
-      padding: 2rem;
-      background: #ffffff;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      text-align: center;
     }
     h1 {
       text-align: center;
@@ -48,6 +43,12 @@
       padding-bottom: 0.3rem;
       margin-top: 2rem;
     }
+    .intro {
+      font-size: 1.1rem;
+      text-align: center;
+      color: #444;
+      margin-bottom: 2rem;
+    }
     ul {
       padding-left: 1.5rem;
     }
@@ -56,6 +57,36 @@
     }
     li:hover {
       background-color: #f0f0f0;
+    }
+    section {
+      margin-bottom: 2.5rem;
+    }
+    .top-links {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .top-links a {
+      display: inline-block;
+      margin: 0 10px;
+      text-decoration: none;
+      color: #2a6f77;
+      border: 1px solid #2a6f77;
+      padding: 6px 14px;
+      border-radius: 6px;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    .top-links a:hover {
+      background-color: #2a6f77;
+      color: white;
+    }
+    .login {
+      max-width: 400px;
+      margin: 6rem auto;
+      padding: 2rem;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
     }
     input[type="password"] {
       padding: 10px;
@@ -76,39 +107,11 @@
     }
     p#error {
       color: red;
-      font-size: 0.9rem;
-    }
-    .intro {
-      font-size: 1.1rem;
-      text-align: center;
-      margin-bottom: 2rem;
-      color: #444;
-    }
-    section {
-      margin-bottom: 2.5rem;
-    }
-    .top-links {
-      text-align: center;
-      margin-top: -1.5rem;
-      margin-bottom: 2rem;
-    }
-    .top-links a {
-      display: inline-block;
-      margin: 0 10px;
-      text-decoration: none;
-      color: #2a6f77;
-      border: 1px solid #2a6f77;
-      padding: 6px 14px;
-      border-radius: 6px;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-    .top-links a:hover {
-      background-color: #2a6f77;
-      color: white;
     }
   </style>
 </head>
 <body>
+
   <div class="login" id="login">
     <h2>Enter Access Code</h2>
     <input type="password" id="password" placeholder="Access code" />
@@ -116,55 +119,62 @@
     <p id="error"></p>
   </div>
 
-  <div class="container" id="content" style="display:none;">
-    <h1>Maria I. Castillo, Ed.D.</h1>
-    <p class="intro">
-      Language Education Specialist, Curriculum Developer & Online Teaching Practitioner<br>
-      Experienced in Higher Ed, Educator Training & Global Instruction
-    </p>
+  <div id="content" style="display:none;">
+    <nav>
+      <a href="#about">About</a>
+      <a href="#offer">What I Offer</a>
+      <a href="#projects">Projects</a>
+      <a href="#highlights">Highlights</a>
+      <a href="#next">What's Next</a>
+    </nav>
 
-    <div class="top-links">
-      <a href="CV_Maria_Castillo.pdf" download>📄 Download CV</a>
-      <a href="mailto:your-email@example.com">📩 Contact Me</a>
+    <div class="container">
+      <h1>Maria I. Castillo, Ed.D.</h1>
+      <p class="intro">Language Education Specialist, Curriculum Developer & Online Teaching Practitioner<br>Experienced in Higher Ed, Educator Training & Global Instruction</p>
+
+      <div class="top-links">
+        <a href="CV_Maria_Castillo.pdf" download>📄 Download CV</a>
+        <a href="mailto:your-email@example.com">📩 Contact Me</a>
+      </div>
+
+      <section id="about">
+        <h2>About Me</h2>
+        <p>With over 15 years of international and domestic experience in higher education, adult learning, curriculum design, and technology-enhanced instruction, I am now expanding into roles that value cross-cultural communication, educational innovation, and program development in digital learning environments.</p>
+      </section>
+
+      <section id="offer">
+        <h2>What I Offer</h2>
+        <ul>
+          <li>Curriculum design for language education and adult learning</li>
+          <li>Experience with online instruction and digital tools for language education</li>
+          <li>Program coordination and educator support in higher education and adult learning contexts</li>
+          <li>Cross-cultural instruction and global education delivery</li>
+        </ul>
+      </section>
+
+      <section id="projects">
+        <h2>Key Projects & Impact</h2>
+        <ul>
+          <li>Facilitated cross-national curriculum training in the U.S., Mexico, China, and Slovenia</li>
+          <li>Co-authored an NSF grant for cyberlearning in language education</li>
+          <li>Managed curriculum delivery and educator support in adult language education programs</li>
+        </ul>
+      </section>
+
+      <section id="highlights">
+        <h2>Selected Highlights</h2>
+        <ul>
+          <li>Designed a multi-level adult language program tailored to institutional needs</li>
+          <li>Led training on immersive teaching methods and online platforms</li>
+          <li>Supported recruitment and community engagement to improve enrollment in ESL programs</li>
+        </ul>
+      </section>
+
+      <section id="next">
+        <h2>What's Next?</h2>
+        <p>Exploring opportunities in digital learning, consulting, and global education that align with my instructional background and future goals.</p>
+      </section>
     </div>
-
-    <section>
-      <h2>About Me</h2>
-      <p>With over 15 years of international and domestic experience in higher education, adult learning, curriculum design, and technology-enhanced instruction, I am now expanding into roles that value cross-cultural communication, educational innovation, and program development in digital learning environments.</p>
-    </section>
-
-    <section>
-      <h2>What I Offer</h2>
-      <ul>
-        <li>Curriculum design for language education and adult learning</li>
-        <li>Experience with online instruction and digital tools for language education</li>
-        <li>Program coordination and educator support in higher education and adult learning contexts</li>
-        <li>Cross-cultural instruction and global education delivery</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Key Projects & Impact</h2>
-      <ul>
-        <li>Facilitated cross-national curriculum training in the U.S., Mexico, China, and Slovenia</li>
-        <li>Co-authored an NSF grant for cyberlearning in language education</li>
-        <li>Managed curriculum delivery and educator support in adult language education programs</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Selected Highlights</h2>
-      <ul>
-        <li>Designed a multi-level adult language program tailored to institutional needs</li>
-        <li>Led training on immersive teaching methods and online platforms</li>
-        <li>Supported recruitment and community engagement to improve enrollment in ESL programs</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>What's Next?</h2>
-      <p>Exploring opportunities in digital learning, consulting, and global education that align with my instructional background and future goals.</p>
-    </section>
   </div>
 
   <script>
