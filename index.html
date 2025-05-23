@@ -2,42 +2,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Maria Castillo | Portfolio</title>
+  <meta charset="UTF-8">
+  <title>Maria Castillo | Career Portfolio</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #f4f4f4; text-align: center; padding: 4rem; }
-    .login, #content { max-width: 600px; margin: auto; background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
-    input { padding: 10px; font-size: 1rem; width: 80%; }
-    button { padding: 10px 20px; font-size: 1rem; margin-top: 1rem; cursor: pointer; }
+    body { font-family: 'Segoe UI', sans-serif; background-color: #f4f4f4; margin: 0; }
+    nav { background-color: #2a6f77; padding: 1rem; display: flex; justify-content: center; gap: 20px; }
+    nav button { background: none; border: none; color: white; font-weight: bold; cursor: pointer; font-size: 1rem; }
+    nav button:hover, nav button.active { text-decoration: underline; }
+    .header { text-align: center; padding: 2rem 1rem 1rem; background-color: #e9f1f1; border-bottom: 1px solid #ccc; }
+    .header h1 { margin-bottom: 0.5rem; color: #2a6f77; }
+    .header p { margin-top: 0; font-size: 1.1rem; color: #333; }
+    .container { max-width: 900px; margin: 2rem auto; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    h2 { color: #2a6f77; border-bottom: 1px solid #ddd; padding-bottom: 0.25rem; }
+    section { display: none; min-height: 400px; opacity: 0; transition: opacity 0.5s ease-in-out; }
+    section.active { display: block; opacity: 1; }
+    ul { padding-left: 20px; }
+    li:hover { background: #f0f0f0; }
+    .top-links { text-align: center; margin-bottom: 2rem; }
+    .top-links a { text-decoration: none; color: #2a6f77; border: 1px solid #2a6f77; padding: 6px 14px; border-radius: 6px; margin: 0 8px; }
+    .top-links a:hover { background-color: #2a6f77; color: white; }
+    .login { max-width: 400px; margin: 6rem auto; padding: 2rem; background: #ffffff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center; }
+    input[type="password"] { padding: 10px; width: 80%; margin-bottom: 1rem; font-size: 1rem; border: 1px solid #ccc; border-radius: 6px; }
+    button.access { padding: 10px 20px; font-size: 1rem; background-color: #2a6f77; color: white; border: none; border-radius: 6px; cursor: pointer; }
+    footer { text-align: center; font-size: 0.9rem; color: #666; padding: 2rem 1rem; }
   </style>
 </head>
 <body>
 
 <div class="login" id="login">
-  <h2>Portfolio Access</h2>
-  <p>Please enter the password to view this portfolio.</p>
+  <h2>Enter Access Code</h2>
   <input type="password" id="password" placeholder="Access code" />
-  <br>
-  <button onclick="checkPassword()">Access Portfolio</button>
-  <p id="error" style="color: red;"></p>
+  <button class="access" onclick="checkPassword()">Submit</button>
+  <p id="error" style="color:red;"></p>
 </div>
 
-<div id="content" style="display: none;">
-  <h1>Maria I. Castillo, Ed.D.</h1>
-  <p>Language Education Specialist • Curriculum Developer • Digital Learning Contributor</p>
-  <p>This is your verified portfolio home. All tabs, sections, and downloadable content will appear here once you complete upload of your materials.</p>
+<div id="content" style="display:none;">
+  <nav id="tab-nav">
+    <button onclick="showTab('about')" class="active">About</button>
+    <button onclick="showTab('offer')">What I Offer</button>
+    <button onclick="showTab('projects')">Projects</button>
+    <button onclick="showTab('highlights')">Highlights</button>
+    <button onclick="showTab('next')">What's Next</button>
+  </nav>
+
+  <div class="header">
+    <h1>Maria I. Castillo, Ed.D.</h1>
+    <p>Language Education Specialist • Curriculum Developer • Digital Learning Contributor</p>
+  </div>
+
+  <div class="container">
+    <div class="top-links">
+      <a href="CV_Maria_Castillo.pdf" download>📄 Download CV</a>
+      <a href="mailto:your-email@example.com">📩 Contact Me</a>
+    </div>
+
+    <section id="about" class="active">
+      <h2>About Me</h2>
+      <p>With over 15 years of experience in adult and higher education, I’ve helped design and deliver language learning experiences tailored to the needs of working professionals and immigrant communities. My work spans curriculum design, educator onboarding, and international instruction across the U.S., Latin America, Europe, and Asia. I’m now pivoting toward roles where I can apply this expertise in digital learning, consulting, and education technology at scale.</p>
+    </section>
+
+    <section id="offer">
+      <h2>What I Offer</h2>
+      <ul>
+        <li>Curriculum design and delivery for multilingual and adult learners</li>
+        <li>Graduate-level instruction and capstone advising in TESOL and Bilingual Education</li>
+        <li>Instructor mentoring, online teaching support, and course quality alignment</li>
+        <li>Applied use of AI tools and digital platforms in course and program development</li>
+        <li>International faculty collaboration and cross-cultural instructional training</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects & Impact</h2>
+      <ul>
+        <li>Launched and managed a multi-level ESL program for multilingual adults</li>
+        <li>Mentored instructors in digital course delivery and curriculum quality</li>
+        <li>Designed and taught graduate TESOL courses for working educators and leaders</li>
+        <li>Integrated AI-informed strategies into online instructional design</li>
+        <li>Led cross-national educator training in China, Slovenia, Mexico, and the U.S.</li>
+      </ul>
+    </section>
+
+    <section id="highlights">
+      <h2>Selected Highlights</h2>
+      <ul>
+        <li>Directed ESL program operations including curriculum and faculty oversight</li>
+        <li>Earned microcredential in AI in Education and 15+ certifications in edtech and UX</li>
+        <li>Co-authored national grant proposal and piloted cyberlearning model</li>
+        <li>Presented at international workshops and served on dissertation committees</li>
+        <li>Secured grant for UAE-based faculty-led program (not launched due to funding)</li>
+      </ul>
+    </section>
+
+    <section id="next">
+      <h2>What's Next?</h2>
+      <p>I’m currently open to roles that blend curriculum leadership, educator development, and digital innovation — particularly within edtech, higher education, or consulting-focused organizations. With experience that spans instruction, onboarding, cross-border collaboration, and AI-enhanced teaching, I’m ready to support forward-thinking teams and learning initiatives.</p>
+    </section>
+  </div>
+
+  <footer>
+    <hr style="margin: 2rem auto; width: 80%; border: none; border-top: 1px solid #ddd;" />
+    <p>&copy; 2025 Maria I. Castillo | All rights reserved</p>
+  </footer>
 </div>
 
 <script>
   function checkPassword() {
-    const pw = document.getElementById("password").value;
-    const error = document.getElementById("error");
-    if (pw === "castillo2024") {
-      document.getElementById("login").style.display = "none";
-      document.getElementById("content").style.display = "block";
+    const input = document.getElementById('password').value;
+    const content = document.getElementById('content');
+    const error = document.getElementById('error');
+    if (input === "castillo2024") {
+      document.getElementById('login').style.display = 'none';
+      content.style.display = 'block';
     } else {
-      error.textContent = "Incorrect password. Please try again.";
+      error.textContent = "Incorrect access code. Please try again.";
     }
+  }
+
+  function showTab(tabId) {
+    const sections = document.querySelectorAll("section");
+    const buttons = document.querySelectorAll("nav button");
+    sections.forEach(section => section.classList.remove("active"));
+    buttons.forEach(btn => btn.classList.remove("active"));
+    document.getElementById(tabId).classList.add("active");
+    const clicked = Array.from(buttons).find(b => b.getAttribute("onclick").includes(tabId));
+    if (clicked) clicked.classList.add("active");
   }
 </script>
 
