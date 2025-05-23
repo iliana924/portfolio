@@ -1,1 +1,140 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Maria Castillo | Final Portfolio</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; background-color: #f4f4f4; margin: 0; }
+    nav { background-color: #2a6f77; padding: 1rem; display: flex; justify-content: center; gap: 20px; }
+    nav button { background: none; border: none; color: white; font-weight: bold; cursor: pointer; font-size: 1rem; }
+    nav button:hover, nav button.active { text-decoration: underline; }
+    .header { text-align: center; padding: 2rem 1rem 1rem; background-color: #e9f1f1; border-bottom: 1px solid #ccc; }
+    .header h1 { margin-bottom: 0.5rem; color: #2a6f77; }
+    .header p { margin-top: 0; font-size: 1.1rem; color: #333; }
+    .container { max-width: 900px; margin: 2rem auto; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    h2 { color: #2a6f77; border-bottom: 1px solid #ddd; padding-bottom: 0.25rem; }
+    section { display: none; min-height: 400px; opacity: 0; transition: opacity 0.5s ease-in-out; }
+    section.active { display: block; opacity: 1; }
+    ul { padding-left: 20px; }
+    li:hover { background: #f0f0f0; }
+    .top-links { text-align: center; margin-bottom: 2rem; }
+    .top-links a { text-decoration: none; color: #2a6f77; border: 1px solid #2a6f77; padding: 6px 14px; border-radius: 6px; margin: 0 8px; }
+    .top-links a:hover { background-color: #2a6f77; color: white; }
+    .login { max-width: 400px; margin: 6rem auto; padding: 2rem; background: #ffffff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center; }
+    input[type="password"] { padding: 10px; width: 80%; margin-bottom: 1rem; font-size: 1rem; border: 1px solid #ccc; border-radius: 6px; }
+    button.access { padding: 10px 20px; font-size: 1rem; background-color: #2a6f77; color: white; border: none; border-radius: 6px; cursor: pointer; }
+    footer { text-align: center; font-size: 0.9rem; color: #666; padding: 2rem 1rem; }
+  </style>
+</head>
+<body>
+
+<div class="login" id="login">
+  <h2>Enter Access Code</h2>
+  <input type="password" id="password" placeholder="Access code" />
+  <button class="access" onclick="checkPassword()">Submit</button>
+  <p id="error" style="color:red;"></p>
+</div>
+
+<div id="content" style="display:none;">
+  <nav id="tab-nav">
+    <button onclick="showTab('about')" class="active">About</button>
+    <button onclick="showTab('offer')">What I Offer</button>
+    <button onclick="showTab('projects')">Projects</button>
+    <button onclick="showTab('highlights')">Highlights</button>
+    <button onclick="showTab('next')">What's Next</button>
+  </nav>
+
+  <div class="header">
+    <h1>Maria I. Castillo, Ed.D.</h1>
+    <p>Language Education Specialist • Curriculum Developer • Digital Learning Contributor</p>
+  </div>
+
+  <div class="container">
+    <div class="top-links">
+      <a href="CV_Maria_Castillo.pdf" download>📄 Download CV</a>
+      <a href="mailto:your-email@example.com">📩 Contact Me</a>
+    </div>
+
+    <section id="about" class="active">
+      <h2>About Me</h2>
+      <p>With over 15 years of experience in adult and higher education, I’ve helped design and deliver language learning experiences tailored to the needs of working professionals and immigrant communities — from workplace-focused ESL courses to multilingual adult instruction programs. My work spans curriculum design, educator onboarding, and international instruction across the U.S., Latin America, Europe, and Asia. Now, I’m pivoting toward roles where I can apply this expertise in digital lea...
+    </section>
+
+    <section id="offer">
+      <h2>What I Offer</h2>
+      <ul>
+        <li>Curriculum design for ESL/ESOL, multilingual, and adult learning programs</li>
+        <li>Graduate-level instruction in TESOL and Bilingual Education</li>
+        <li>Instructor mentoring, online onboarding, and teaching quality support</li>
+        <li>Cross-border academic coordination and instructional collaboration</li>
+        <li>Applied expertise in AI-enhanced course design and digital pedagogy</li>
+        <li>Program planning, community engagement, and student success initiatives</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects & Impact</h2>
+      <ul>
+        <li>Taught graduate-level TESOL and Bilingual Education courses using scaffolded, culturally responsive, and inclusive online instruction</li>
+        <li>Managed instructional operations for a vocational ESL program, leading course planning, faculty support, and retention strategies</li>
+        <li>Provided onboarding and mentoring to online instructors, reviewing course quality and delivery alignment</li>
+        <li>Facilitated cross-national faculty development in Mexico, China, Slovenia, and the U.S., including curriculum review and writing workshops</li>
+        <li>Integrated AI in course design after earning a microcredential and completing advanced TESOL training on educational technology</li>
+        <li>Co-authored an NSF-funded cyberlearning proposal for adult ESL instruction using immersive virtual platforms</li>
+      </ul>
+    </section>
+
+    <section id="highlights">
+      <h2>Selected Highlights</h2>
+      <ul>
+        <li>Launched a comprehensive ESL/ESOL program for multilingual adult learners</li>
+        <li>Led faculty onboarding and course quality mentoring across institutions</li>
+        <li>Delivered online graduate courses to educators and school leaders in TESOL/Bilingual Ed</li>
+        <li>Earned 15+ credentials in AI, edtech, UX, and instructional quality (QM-certified)</li>
+        <li>Contributed to a cyberlearning model and co-authored a national ESL grant proposal</li>
+        <li>Presented at international workshops and academic conferences across four continents</li>
+        <li>Served on doctoral dissertation committees and supported Ed.D. capstone advising</li>
+        <li>Proposed and secured a grant for a UAE faculty-led program (canceled due to funding)</li>
+        <li>Recognized through institutional awards, research collaborations, and global partnerships</li>
+      </ul>
+    </section>
+
+    <section id="next">
+      <h2>What's Next?</h2>
+      <p>I’m now seeking opportunities aligned with my experience in adult and higher education, curriculum leadership, and digital teaching innovation. I’m especially interested in roles that involve online instructional design, program development, educator support, or education-focused consulting. With a track record in higher ed, adult learning, and international engagement — and continued upskilling in AI and instructional tech — I bring a grounded, practice-driven perspective to future-facing ed...
+    </section>
+  </div>
+
+  <footer>
+    <hr style="margin: 2rem auto; width: 80%; border: none; border-top: 1px solid #ddd;" />
+    <p>&copy; 2025 Maria I. Castillo | All rights reserved</p>
+  </footer>
+</div>
+
+<script>
+  function checkPassword() {
+    const input = document.getElementById('password').value;
+    const content = document.getElementById('content');
+    const error = document.getElementById('error');
+    if (input === "castillo2024") {
+      document.getElementById('login').style.display = 'none';
+      content.style.display = 'block';
+    } else {
+      error.textContent = "Incorrect access code. Please try again.";
+    }
+  }
+
+  function showTab(tabId) {
+    const sections = document.querySelectorAll("section");
+    const buttons = document.querySelectorAll("nav button");
+    sections.forEach(section => section.classList.remove("active"));
+    buttons.forEach(btn => btn.classList.remove("active"));
+    document.getElementById(tabId).classList.add("active");
+    const clicked = Array.from(buttons).find(b => b.getAttribute("onclick").includes(tabId));
+    if (clicked) clicked.classList.add("active");
+  }
+</script>
+
+</body>
+</html>
