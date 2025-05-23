@@ -3,41 +3,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Portfolio Test</title>
+  <title>Maria Castillo | Career Portfolio</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 2rem; text-align: center; }
-    .login, #content { max-width: 600px; margin: auto; }
-    input { padding: 10px; margin-top: 1rem; }
-    button { padding: 10px 20px; }
+    body { font-family: 'Segoe UI', sans-serif; background-color: #f4f4f4; margin: 0; }
+    nav { background-color: #2a6f77; padding: 1rem; display: flex; justify-content: center; gap: 20px; }
+    nav button { background: none; border: none; color: white; font-weight: bold; cursor: pointer; font-size: 1rem; }
+    nav button:hover, nav button.active { text-decoration: underline; }
+    .header { text-align: center; padding: 2rem 1rem 1rem; background-color: #e9f1f1; border-bottom: 1px solid #ccc; }
+    .header h1 { margin-bottom: 0.5rem; color: #2a6f77; }
+    .header p { margin-top: 0; font-size: 1.1rem; color: #333; }
+    .container { max-width: 900px; margin: 2rem auto; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    h2 { color: #2a6f77; border-bottom: 1px solid #ddd; padding-bottom: 0.25rem; }
+    section { display: none; min-height: 400px; opacity: 0; transition: opacity 0.5s ease-in-out; }
+    section.active { display: block; opacity: 1; }
+    ul { padding-left: 20px; }
+    li:hover { background: #f0f0f0; }
+    .top-links { text-align: center; margin-bottom: 2rem; }
+    .top-links a { text-decoration: none; color: #2a6f77; border: 1px solid #2a6f77; padding: 6px 14px; border-radius: 6px; margin: 0 8px; }
+    .top-links a:hover { background-color: #2a6f77; color: white; }
+    .login { max-width: 400px; margin: 6rem auto; padding: 2rem; background: #ffffff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center; }
+    input[type="password"] { padding: 10px; width: 80%; margin-bottom: 1rem; font-size: 1rem; border: 1px solid #ccc; border-radius: 6px; }
+    button.access { padding: 10px 20px; font-size: 1rem; background-color: #2a6f77; color: white; border: none; border-radius: 6px; cursor: pointer; }
+    footer { text-align: center; font-size: 0.9rem; color: #666; padding: 2rem 1rem; }
   </style>
 </head>
 <body>
 
-<div class="login" id="login">
-  <h2>Enter Access Code</h2>
-  <input type="password" id="password" placeholder="Access code" />
-  <button onclick="checkPassword()">Submit</button>
-  <p id="error" style="color:red;"></p>
-</div>
-
-<div id="content" style="display:none;">
-  <h1>✅ Success!</h1>
-  <p>Your GitHub Pages site is working correctly.</p>
-</div>
-
-<script>
-  function checkPassword() {
-    const input = document.getElementById('password').value;
-    const content = document.getElementById('content');
-    const error = document.getElementById('error');
-    if (input === "castillo2024") {
-      document.getElementById('login').style.display = 'none';
-      content.style.display = 'block';
-    } else {
-      error.textContent = "Incorrect access code.";
-    }
-  }
-</script>
+<!-- Login and Tab sections omitted for brevity here -->
 
 </body>
 </html>
